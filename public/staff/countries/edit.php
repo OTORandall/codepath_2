@@ -18,7 +18,7 @@ if(is_post_request()) {
 
   //is_valid_code($state['code']);
 
-  $result = update_country($state);
+  $result = update_country($country);
   if($result === true) {
     redirect_to('show.php?id=' . u($country['id']));
   } else {

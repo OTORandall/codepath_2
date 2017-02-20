@@ -10,7 +10,7 @@ $state_result = find_state_by_id($id);
 $state = db_fetch_assoc($state_result);
 
 // show the coutry instead of country_id
-$country_result = find_country_by_id($id);
+$country_result = find_country_by_id($state['country_id']);
 // No loop, only one result
 $country = db_fetch_assoc($country_result);
 
@@ -21,7 +21,7 @@ $country = db_fetch_assoc($country_result);
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
-  <a href="../countries/index.php">Back to List</a><br />
+  <a href="../countries/show.php?id=<?php echo u(h($state['country_id']));?>">Back to List</a><br />
 
   <h1>State: <?php echo h($state['name']); ?></h1>
 

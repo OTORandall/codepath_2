@@ -38,7 +38,7 @@ if(is_post_request()) {
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="main-content">
-  <a href="index.php">Back to States List</a><br />
+  <a href="../countries/show.php?id=<?php echo u(h($state['country_id']));?>">Back to States List</a><br />
 
   <h1>New State</h1>
 

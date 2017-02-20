@@ -18,7 +18,7 @@ if(is_post_request()) {
   if(isset($_POST['name'])) { $territory['name'] = $_POST['name']; }
   if(isset($_POST['position'])) { $territory['position'] = $_POST['position']; }
   // the state_id will be in the url, so we use get method to retrive it
-  if(isset($_GET['state_id'])) { $territory['state_id'] = $_GET['state_id']; }
+  if(isset($_GET['id'])) { $territory['state_id'] = $_GET['id']; }
 
   //is_valid_position($territory['position']);
   $result = insert_territory($territory);
@@ -40,7 +40,7 @@ if(is_post_request()) {
 
   <!-- TODO add form -->
   <?php echo display_errors($errors); ?>
-  <form action="new.php?state_id=<?php echo u(h($_GET['id']));?>" method="post">
+  <form action="new.php?id=<?php echo u(h($_GET['id']));?>" method="post">
     Name:<br />
     <input type="text" name="name" value="<?php echo h($territory['name']); ?>" /><br />
     Position:<br />

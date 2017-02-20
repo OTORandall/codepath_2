@@ -14,7 +14,7 @@ if(is_post_request()){
   $response = $_POST['response'];
   $result = is_valid_response($response);
   if($result === true){
-    if( $response == 'y'){
+    if( $response == 'y' || $response == 'Y'){
       $result = delete_user($user);
       if($result === true){
         redirect_to('index.php');

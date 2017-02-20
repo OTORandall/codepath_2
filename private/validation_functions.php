@@ -19,7 +19,6 @@
 
   // custom validations
   function is_valid_phone($phone=''){
-    echo $phone;
     $pattern = '/^[0-9 ()-]+$/';
     $result = preg_match($pattern, $phone, $match);
     if($result){
@@ -115,7 +114,7 @@
   function has_valid_email_format($value) {
     // Function can be improved later to check for
     // more than just '@'.
-    $result = preg_match('/^[A-Za-z0-9@.-_]+$/', $value, $match);
+    $result = preg_match('/^[A-Za-z0-9-_]+[@.]+[A-Za-z0-9-_]+\.com$/', $value, $match);
     if($result) {
       return true;
     }
